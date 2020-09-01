@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making Magazine</title>
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f1e4de;
+      }
+
+      .forwardPage,
+      .backwardPage {
+        width: 50vw;
+        height: 80vh;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 204, 255, 0);
+        z-index: 5;
+      }
+
+      .lottie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      .btncontainer {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      #player1,
+      #player2 {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      #player1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+      }
+
+      #player2 {
+        z-index: 2;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2vh;
+		  font-family: helvetica;
+		  text-align: center;
+      }
+
+      .links a {
+        font-family: sans-serif;
+        padding: 0 2vw 0 2vw;
+        text-decoration: none;
+        color: #333937;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lottie">
+      <lottie-player
+        mode="normal"
+        src="./1.json"
+        style="width: 80%; height: 80%; text-align: center"
+        id="player1"
+      >
+      </lottie-player>
+      <lottie-player
+        mode="normal"
+        style="width: 80%; height: 80%; text-align: center"
+        id="player2"
+      >
+      </lottie-player>
+    </div>
+
+    <div class="btncontainer">
+      <div class="backwardPage"></div>
+      <div class="forwardPage"></div>
+    </div>
+    <div class="links">
+       <a href="instagram.com/makingmagazine"><b>insta</b></a>
+		<br>
+      <a href="twitter.com/makingmagazine"><b>twitter</b></a>
+		
+		<p>created by</p>
+		
+	<a href="samjstudios.com"> <b>samjstudios</b></a>
+		
+		<a href="https://www.instagram.com/akininaj/"> <b>akin inaj</b></a>
+    </div>
+  </body>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    type="text/javascript"
+  ></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+  <script src="./magazineFlipper.js"></script>
+</html>
