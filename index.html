@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,8 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #f1e4de;
+        background-color: rgba(240, 231, 226, 100);
+		  overflow: scroll;
       }
 
       .forwardPage,
@@ -22,7 +23,10 @@
         padding: 0;
         background-color: rgba(0, 204, 255, 0);
         z-index: 5;
+        border: none;
       }
+
+      button:focus { outline: none; }
 
       .lottie {
         display: flex;
@@ -66,8 +70,8 @@
         flex-direction: column;
         justify-content: center;
         padding: 2vh;
-		  font-family: helvetica;
-		  text-align: center;
+      font-family: helvetica;
+      text-align: center;
       }
 
       .links a {
@@ -80,35 +84,25 @@
   </head>
   <body>
     <div class="lottie">
-      <lottie-player
-        mode="normal"
-        src="./1.json"
-        style="width: 80%; height: 80%; text-align: center"
-        id="player1"
-      >
-      </lottie-player>
-      <lottie-player
-        mode="normal"
-        style="width: 80%; height: 80%; text-align: center"
-        id="player2"
-      >
-      </lottie-player>
+      <video id="video">
+        <source src="https://makingmagazine.co/render.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="btncontainer">
-      <div class="backwardPage"></div>
-      <div class="forwardPage"></div>
+      <button id="backward" class="backwardPage"></button>
+      <button id="forward" class="forwardPage"></button>
     </div>
     <div class="links">
        <a href="instagram.com/makingmagazine"><b>insta</b></a>
-		<br>
+    <br>
       <a href="twitter.com/makingmagazine"><b>twitter</b></a>
-		
-		<p>created by</p>
-		
-	<a href="samjstudios.com"> <b>samjstudios</b></a>
-		
-		<a href="https://www.instagram.com/akininaj/"> <b>akin inaj</b></a>
+    
+    <p>created by</p>
+    
+  <a href="samjstudios.com"> <b>samjstudios</b></a>
+    
+    <a href="https://www.instagram.com/akininaj/"> <b>akin inaj</b></a>
     </div>
   </body>
   <script
