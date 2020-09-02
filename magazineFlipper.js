@@ -1,9 +1,8 @@
-// Modified from https://jsfiddle.net/r4zamgeo/
-
 var vid = document.getElementById('video');
 var intervalRewind;
 var elapsed = 0;
 
+// Modified from https://jsfiddle.net/r4zamgeo/
 $("#backward").click(function() {
   // Disable moving forwards or backwards while animating
   $('#backward').prop('disabled', true);
@@ -31,12 +30,21 @@ $("#forward").click(function() {
   // Disable moving forwards or backwards while animating
   $('#forward').prop('disabled', true);
   $('#backward').prop('disabled', true);
-   
-  vid.play();
-  setTimeout(function(){
-    // Re-enable moving forwards or backwards after animating
-    $('#forward').prop('disabled', false);
-    $('#backward').prop('disabled', false);
+
+  var playpromise  = video.play();
   
-    vid.pause()}, 2000);
+  if (playpromise !== undefined){
+    playpromise.then(_ => {
+      setTimeout(function(){
+        // Re-enable moving forwards or backwards after animating
+        $('#forward').prop('disabled', false);
+        $('#backward').prop('disabled', false);
+        video.pause();
+      }, 2000)
+    })
+    .catch(error => {
+      // uh oh
+    })
+  }
+
 });
