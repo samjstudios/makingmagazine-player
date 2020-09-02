@@ -34,8 +34,9 @@ $("#forward").click(function() {
    
   vid.play();
   setTimeout(function(){
-    vid.pause()}, 2000);
     // Re-enable moving forwards or backwards after animating
     $('#forward').prop('disabled', false);
     $('#backward').prop('disabled', false);
+  
+    vid.pause()}, 2000);
 });
